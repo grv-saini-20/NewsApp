@@ -1,4 +1,4 @@
-name: Deploy
+name: Deploy React App to GitHub Pages
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,11 +22,12 @@ jobs:
       run: npm install
 
     - name: Build project
+      env:
+        REACT_APP_API_KEY: ${{ secrets.API_KEY }}
       run: npm run build
 
-    - name: Deploy
-      env:
-        API_KEY: ${{ secrets.API_KEY }}
+    - name: Deploy to GitHub Pages
+      if: success()
       run: |
+        npm install -g gh-pages
         npm run deploy
-
