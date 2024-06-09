@@ -25,11 +25,11 @@ export default class Navbar extends Component {
                                 <li className="nav-item">
                                     <Link className="nav-link text-white" to="/general">General</Link>
                                 </li>
-                                <li>
-                                    <Link className="nav-link text-white" to="/health">Health</Link>
-                                </li>
                                 <li className="nav-item">
                                     <Link className="nav-link text-white" to="/science">Science</Link>
+                                </li>
+                                <li>
+                                    <Link className="nav-link text-white" to="/health">Health</Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link className="nav-link text-white" to="/sports">Sports</Link>
